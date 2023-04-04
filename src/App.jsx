@@ -12,18 +12,37 @@ function App() {
   useEffect(()=>{
 
     const handleFetchGitHub =async ()=>{
-        let getDataApi = await axios.get("https://api.github.com/users/Muhammad-Bilal-code/repos")
-        .then((val)=>{
+
+      //using try cath
+      // try{
+      //   let getDataApi = await axios.get("https://api.github.com/users/Muhammad-Bilal-ode/repos")
+      //   console.log(getDataApi) 
+      //   if(getDataApi.length<1){
+      //     console.log("User Not Found")
+      //   }
+      //   else{
+      //            setGetData(getDataApi)
+      //            console.log(getData)
+      //           }
+      //         }
+      // catch(err){
+      //   console.log(err)
+      // }
+      // console.log(getData)
+      
+      //using .then .catch
+      
+      let getDataApi = await axios.get("https://api.github.com/users/Muhammad-Bilal-code/repos")
+      .then((val)=>{
           // console.log(val)
           setGetData(val.data)
           // console.log(getData)
         }).catch((err)=>{
-          console.log("User Not Found : " + err)
-        })
-      }
-      handleFetchGitHub()
-    },[])
-    console.log(getData)
+            console.log("User Not Found : " + err)
+          })
+        }
+        handleFetchGitHub()
+      },[])
 
 
 
