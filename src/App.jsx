@@ -39,7 +39,7 @@ function App() {
           return (
             <div className="card-item" key={val.id}>
               <h2>{val.name}</h2>
-              <a href={val.html_url}>Go to Repo</a>
+              <a href={val.html_url} target='_blank'>Go to Repo</a>
             </div>
             )
         })}
